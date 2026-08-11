@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart College Bus Tracking & Prediction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="badge text-bg-primary rounded-pill p-2"><i class="bi bi-bus-front-fill"></i></span>
+        College Bus Tracker
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item"><a class="nav-link" data-nav="home" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav="dashboard" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav="tracking" href="tracking.html">Live Tracking</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav="routes" href="routes.html">Routes</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav="prediction" href="prediction.html">ETA Prediction</a></li>
+          <li class="nav-item"><a class="nav-link" data-nav="notifications" href="notifications.html">Notifications <span class="badge text-bg-primary rounded-pill ms-1 d-none" data-unread-count></span></a></li>
+          <li class="nav-item"><a class="nav-link" data-nav="about" href="about.html">About</a></li>
+        </ul>
+        <a class="btn nav-track-btn ms-lg-3 mt-3 mt-lg-0" href="tracking.html">Track Bus</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container position-relative">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6 fade-in-up">
+            <span class="hero-badge mb-3"><i class="bi bi-shield-check"></i> Premium smart transport interface</span>
+            <h1 class="display-4 fw-bold lh-1 mb-3">Smart <span class="text-primary">College Bus</span> Tracking &amp; Prediction</h1>
+            <p class="lead text-secondary mb-4">Track your college bus, monitor routes, and predict arrival times with a smart transportation interface.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <button class="btn btn-primary btn-lg px-4" data-scroll-target="#trackNow"><i class="bi bi-bus-front me-2"></i>Track Bus</button>
+              <button class="btn btn-outline-primary btn-lg px-4" data-scroll-target="#routesPreview"><i class="bi bi-signpost-split me-2"></i>Explore Routes</button>
+            </div>
+            <div class="row g-3 mt-4">
+              <div class="col-6 col-xl-3" data-home-stat><div class="stat-card p-3 h-100"><div class="value">0</div><div class="label">Active buses</div></div></div>
+              <div class="col-6 col-xl-3" data-home-stat><div class="stat-card p-3 h-100"><div class="value">0</div><div class="label">Routes</div></div></div>
+              <div class="col-6 col-xl-3" data-home-stat><div class="stat-card p-3 h-100"><div class="value">0</div><div class="label">Daily trips</div></div></div>
+              <div class="col-6 col-xl-3" data-home-stat><div class="stat-card p-3 h-100"><div class="value">0</div><div class="label">On-time performance</div></div></div>
+            </div>
+          </div>
+          <div class="col-lg-6 fade-in-up stagger-2">
+            <div class="hero-panel p-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div><div class="small-note">Demo operational view</div><h5 class="mb-0 fw-bold">Fleet Snapshot</h5></div>
+                <span class="badge text-bg-danger">Live demo</span>
+              </div>
+              <div class="mini-map rounded-4 p-3">
+                <div class="position-absolute top-0 end-0 m-3 bg-white rounded-pill px-3 py-2 shadow-sm small fw-semibold">
+                  <i class="bi bi-geo-alt text-primary me-1"></i> Demo GPS Simulation
+                </div>
+                <div class="position-absolute bottom-0 start-0 m-3 glass-card p-3" style="max-width: 260px;">
+                  <div class="fw-bold">CB-101</div><div class="small-note">Main Campus sector</div><div class="progress mt-2" style="height: 8px;"><div class="progress-bar" style="width: 62%"></div></div>
+                </div>
+                <div class="position-absolute" style="left: 62%; top: 24%;"><span class="badge text-bg-primary rounded-pill px-3 py-2 shadow-sm">CB-103</span></div>
+                <div class="position-absolute" style="left: 22%; top: 58%;"><span class="badge text-bg-danger rounded-pill px-3 py-2 shadow-sm">CB-102</span></div>
+                <div class="position-absolute" style="left: 44%; top: 70%;"><span class="badge text-bg-warning rounded-pill px-3 py-2 shadow-sm">CB-104</span></div>
+              </div>
+              <div class="row g-3 mt-3">
+                <div class="col-4"><div class="glass-card p-3 text-center"><div class="fw-bold text-primary" data-hero-bus-count>6</div><div class="small-note">Buses</div></div></div>
+                <div class="col-4"><div class="glass-card p-3 text-center"><div class="fw-bold text-primary" data-hero-route-count>4</div><div class="small-note">Routes</div></div></div>
+                <div class="col-4"><div class="glass-card p-3 text-center"><div class="fw-bold text-primary" data-hero-unread-count>0</div><div class="small-note">Unread notices</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Key Features</h2>
+          <p class="section-subtitle mx-auto">The interface is built to show the right transport information quickly, with responsive cards, tables, alerts, and simulated tracking logic.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3"><div class="feature-card p-4 h-100 fade-in-up"><div class="feature-icon mb-3"><i class="bi bi-broadcast"></i></div><h5>Live Bus Tracking</h5><p class="mb-0 text-secondary">Track current bus locations with a clean fleet-style demo interface.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="feature-card p-4 h-100 fade-in-up stagger-1"><div class="feature-icon mb-3"><i class="bi bi-clock-history"></i></div><h5>Smart ETA Prediction</h5><p class="mb-0 text-secondary">Estimate arrival time for upcoming stops using simulated frontend logic.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="feature-card p-4 h-100 fade-in-up stagger-2"><div class="feature-icon mb-3"><i class="bi bi-signpost-split"></i></div><h5>Route Monitoring</h5><p class="mb-0 text-secondary">View routes and stops easily with a clear, organized layout.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="feature-card p-4 h-100 fade-in-up stagger-3"><div class="feature-icon mb-3"><i class="bi bi-exclamation-triangle"></i></div><h5>Delay Alerts</h5><p class="mb-0 text-secondary">Get visual updates about delayed buses and route notices.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trackNow" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="panel-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="section-title mb-0">Transport Snapshot</h3>
+                <button class="btn btn-sm btn-outline-primary" data-toast="Opening dashboard summary.">Open Summary</button>
+              </div>
+              <div class="dashboard-grid">
+                <div class="stat-card p-3 d-flex gap-3 align-items-center"><div class="stat-icon"><i class="bi bi-check2-circle"></i></div><div><div class="value">25+</div><div class="label">Active buses</div></div></div>
+                <div class="stat-card p-3 d-flex gap-3 align-items-center"><div class="stat-icon"><i class="bi bi-diagram-3"></i></div><div><div class="value">12</div><div class="label">Routes</div></div></div>
+                <div class="stat-card p-3 d-flex gap-3 align-items-center"><div class="stat-icon"><i class="bi bi-bus-front"></i></div><div><div class="value">120+</div><div class="label">Daily trips</div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="panel-card h-100">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div><h3 class="section-title mb-0">Recent Buses</h3><p class="small-note mb-0">Preview of buses included in the demo dashboard.</p></div>
+                <a class="btn btn-primary" href="dashboard.html">Go to Dashboard</a>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-6"><div class="bus-card p-3"><div class="d-flex justify-content-between"><div><div class="fw-bold">CB-101</div><div class="small-note">North Gate - Main Campus</div></div><span class="badge text-bg-success">On Time</span></div><div class="progress mt-3" style="height: 8px;"><div class="progress-bar" style="width: 62%"></div></div></div></div>
+                <div class="col-md-6"><div class="bus-card p-3"><div class="d-flex justify-content-between"><div><div class="fw-bold">CB-102</div><div class="small-note">Hostel Loop</div></div><span class="badge text-bg-danger">Delayed</span></div><div class="progress mt-3" style="height: 8px;"><div class="progress-bar bg-danger" style="width: 41%"></div></div></div></div>
+                <div class="col-md-6"><div class="bus-card p-3"><div class="d-flex justify-content-between"><div><div class="fw-bold">CB-104</div><div class="small-note">Railway Station Shuttle</div></div><span class="badge text-bg-primary">Moving</span></div><div class="progress mt-3" style="height: 8px;"><div class="progress-bar" style="width: 76%"></div></div></div></div>
+                <div class="col-md-6"><div class="bus-card p-3"><div class="d-flex justify-content-between"><div><div class="fw-bold">CB-105</div><div class="small-note">South Campus Circular</div></div><span class="badge text-bg-warning">Idle</span></div><div class="progress mt-3" style="height: 8px;"><div class="progress-bar bg-warning" style="width: 21%"></div></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="routesPreview" class="py-5">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-lg-8">
+          <h2 class="section-title">Route and Stop Coverage</h2>
+            <p class="section-subtitle mb-0">Built for fast presentation demos, with four fictional college routes and multiple stops on each route.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a class="btn btn-outline-primary" href="routes.html">Open full route list</a>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3"><div class="route-card p-4 h-100"><div class="badge-soft status-moving mb-3">Route 1</div><h5 class="fw-bold">North Gate - Main Campus</h5><p class="small-note">6 stops | 28 min</p><div class="route-line mb-3"></div><div class="small-note">North Gate, Bus Stand, Library Junction, CSE Block, Main Auditorium, Main Campus</div></div></div>
+          <div class="col-md-6 col-lg-3"><div class="route-card p-4 h-100"><div class="badge-soft status-moving mb-3">Route 2</div><h5 class="fw-bold">Hostel Loop</h5><p class="small-note">5 stops | 21 min</p><div class="route-line mb-3"></div><div class="small-note">Girls Hostel, Boys Hostel, Canteen, Library Junction, Admin Block</div></div></div>
+          <div class="col-md-6 col-lg-3"><div class="route-card p-4 h-100"><div class="badge-soft status-moving mb-3">Route 3</div><h5 class="fw-bold">City Center Express</h5><p class="small-note">4 stops | 34 min</p><div class="route-line mb-3"></div><div class="small-note">City Center, City Mall, Bus Depot, College Gate</div></div></div>
+          <div class="col-md-6 col-lg-3"><div class="route-card p-4 h-100"><div class="badge-soft status-moving mb-3">Route 4</div><h5 class="fw-bold">Railway Station Shuttle</h5><p class="small-note">4 stops | 24 min</p><div class="route-line mb-3"></div><div class="small-note">Railway Station, Police Quarters, Sports Complex, ECE Block</div></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6"><div class="fw-bold">College Bus Tracking and Prediction System</div><div class="small">Static frontend demo built with HTML, CSS, JavaScript, and Bootstrap 5.</div></div>
+        <div class="col-md-6 text-md-end"><a href="dashboard.html" class="me-3">Dashboard</a><a href="tracking.html" class="me-3">Tracking</a><a href="prediction.html">Prediction</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
